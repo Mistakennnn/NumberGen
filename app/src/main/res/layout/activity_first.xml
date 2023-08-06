@@ -36,36 +36,38 @@
 
     <TextView
         android:id="@+id/num"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="50sp"
+        android:gravity="center"
+        android:maxLines="1"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintWidth_max="125dp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#000000"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <NumberPicker
+    <EditText
         android:id="@+id/selector1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/boton1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hola2"
-        android:tag="selector1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/hola2" />
 
-    <NumberPicker
+    <EditText
         android:id="@+id/selector2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/boton1"
-        app:layout_constraintTop_toBottomOf="@+id/hola2"
-        android:tag="selector2"
-        />
-
+        app:layout_constraintTop_toBottomOf="@+id/hola2" />
 
     <Button
         android:id="@+id/boton1"
