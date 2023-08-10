@@ -21,20 +21,27 @@ class FirstActivity : AppCompatActivity() {
 
     fun numRandom(view: View)
     {
-        var selector1 = findViewById<EditText>(R.id.selector1)
-        var selector2 = findViewById<EditText>(R.id.selector2)
-        val num1 = selector1.text.toString().toLong()
-        val num2 = selector2.text.toString().toLong()
+        val selector1 = findViewById<EditText>(R.id.selector1)
+        val selector2 = findViewById<EditText>(R.id.selector2)
+        val aviso = findViewById<TextView>(R.id.aviso)
+        val num1 = selector1.text.toString().toLongOrNull()
+        val num2 = selector2.text.toString().toLongOrNull()
 
-        val menor = min(num1, num2)
-        val mayor = max(num1, num2)
-        val random = Random.nextLong(menor, mayor+1)
-        var texto = findViewById<TextView>(R.id.num)
-        texto.text = "$random"
-        tamañoTexto()
+        if (num1 != null && num2 != null)
+        {
+            val menor = min(num1, num2)
+            val mayor = max(num1, num2)
+            val random = Random.nextLong(menor, mayor + 1)
 
-        var aviso = findViewById<TextView>(R.id.aviso)
-        aviso.text = "Su número generado entre $menor y $mayor es:"
+            val texto = findViewById<TextView>(R.id.num)
+            texto.text = "$random"
+            tamañoTexto()
+            aviso.text = "Su número generado entre $menor y $mayor es:"
+        }
+        else
+        {
+            aviso.text = "¡No puede dejar campos vacíos!"
+        }
     }
 
     fun tamañoTexto()
