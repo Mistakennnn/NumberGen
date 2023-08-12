@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Firstappdaniel"
         tools:targetApi="31">
         <activity
+            android:name="com.Mistaken.NumberGen.SecondActivity"
+            android:exported="false"
+            android:label="@string/title_activity_second"
+            android:theme="@style/Theme.Firstappdaniel" />
+        <activity
             android:name="com.Mistaken.NumberGen.MainMenu"
             android:exported="true">
             <intent-filter>

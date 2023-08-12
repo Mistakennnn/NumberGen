@@ -18,4 +18,9 @@ class MainMenu : AppCompatActivity() {
         val intent = Intent(this, FirstActivity::class.java)
         startActivity(intent)
     }
+    fun siONo(View: View)
+    {
+        val intent2 = Intent(this,SecondActivity::class.java)
+        startActivity(intent2)
+    }
 }
