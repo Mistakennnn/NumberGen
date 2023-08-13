@@ -23,7 +23,7 @@ class SecondActivity : AppCompatActivity() {
             siONo.text = "No!"
             imagen.setImageResource(R.drawable.x)
         } else {
-            siONo.text = "Sí!"
+            siONo.text = "Yes!"
             imagen.setImageResource(R.drawable.checkmark)
         }
     }

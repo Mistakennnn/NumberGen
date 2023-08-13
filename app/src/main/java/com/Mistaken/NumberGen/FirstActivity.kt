@@ -36,11 +36,11 @@ class FirstActivity : AppCompatActivity() {
             val texto = findViewById<TextView>(R.id.num)
             texto.text = "$random"
             tamañoTexto()
-            aviso.text = "Su número generado entre $menor y $mayor es:"
+            aviso.text = "Your number generated between $menor and $mayor is:"
         }
         else
         {
-            aviso.text = "¡No puede dejar campos vacíos!"
+            aviso.text = "Cannot leave blank fields!"
         }
     }
 

@@ -27,13 +27,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="siONo"
+        android:text="Sí o no"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        android:text="Sí o no"
-        android:textSize="70sp"
-        android:onClick="siONo"/>
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        android:text="Name picker"
+        android:textSize="38sp"
+        android:onClick="namePicker"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

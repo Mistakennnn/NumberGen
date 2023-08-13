@@ -23,4 +23,10 @@ class MainMenu : AppCompatActivity() {
         val intent2 = Intent(this,SecondActivity::class.java)
         startActivity(intent2)
     }
+
+    fun namePicker(View: View)
+    {
+        val intent3 = Intent(this,ThirdActivity::class.java)
+        startActivity(intent3)
+    }
 }
