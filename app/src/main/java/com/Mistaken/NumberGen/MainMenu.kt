@@ -11,6 +11,7 @@ class MainMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
+        supportActionBar?.apply { title = "NumberGen App" }
     }
 
     fun oneNumberGen(View: View)
@@ -28,5 +29,11 @@ class MainMenu : AppCompatActivity() {
     {
         val intent3 = Intent(this,ThirdActivity::class.java)
         startActivity(intent3)
+    }
+
+    fun multiNumberGen(View: View)
+    {
+        val intent4 = Intent(this,FourthActivity::class.java)
+        startActivity(intent4)
     }
 }

@@ -14,6 +14,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
+        supportActionBar?.apply { title = "One Number Generator" }
         var texto = findViewById<TextView>(R.id.num)
         var selector1 = findViewById<EditText>(R.id.selector1)
         var selector2 = findViewById<EditText>(R.id.selector2)

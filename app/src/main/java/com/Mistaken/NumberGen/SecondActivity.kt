@@ -12,6 +12,7 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+        supportActionBar?.apply { title = "Yes or No?" }
     }
 
     fun siONo(View: View) {
