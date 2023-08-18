@@ -36,4 +36,16 @@ class MainMenu : AppCompatActivity() {
         val intent4 = Intent(this,FourthActivity::class.java)
         startActivity(intent4)
     }
+
+    fun multiNamePicker(View: View)
+    {
+        val intent5 = Intent(this, FifthActivity::class.java)
+        startActivity(intent5)
+    }
+
+    fun numberGuesser(View: View)
+    {
+        val intent6 = Intent(this, SixthActivity::class.java)
+        startActivity(intent6)
+    }
 }

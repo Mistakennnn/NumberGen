@@ -14,22 +14,22 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
-        supportActionBar?.apply { title = "One Number Generator" }
-        var texto = findViewById<TextView>(R.id.num)
-        var selector1 = findViewById<EditText>(R.id.selector1)
-        var selector2 = findViewById<EditText>(R.id.selector2)
+        supportActionBar?.apply { title = "Number Generator" }
+
+        val numInput1 = findViewById<EditText>(R.id.numInput1)
+        val numInput2 = findViewById<EditText>(R.id.numInput2)
+        val resultText = findViewById<TextView>(R.id.resultText)
     }
 
-    fun numRandom(view: View)
-    {
-        val selector1 = findViewById<EditText>(R.id.selector1)
-        val selector2 = findViewById<EditText>(R.id.selector2)
+    fun numRandom(view: View) {
+        val numInput1 = findViewById<EditText>(R.id.numInput1)
+        val numInput2 = findViewById<EditText>(R.id.numInput2)
         val aviso = findViewById<TextView>(R.id.aviso)
-        val num1 = selector1.text.toString().toLongOrNull()
-        val num2 = selector2.text.toString().toLongOrNull()
 
-        if (num1 != null && num2 != null)
-        {
+        val num1 = numInput1.text.toString().toLongOrNull()
+        val num2 = numInput2.text.toString().toLongOrNull()
+
+        if (num1 != null && num2 != null) {
             val menor = min(num1, num2)
             val mayor = max(num1, num2)
             val random = Random.nextLong(menor, mayor + 1)
@@ -38,18 +38,14 @@ class FirstActivity : AppCompatActivity() {
             texto.text = "$random"
             tamañoTexto()
             aviso.text = "Your number generated between $menor and $mayor is:"
-        }
-        else
-        {
+        } else {
             aviso.text = "Cannot leave blank fields!"
         }
     }
 
-    fun tamañoTexto()
-    {
-        var display = findViewById<TextView>(R.id.num)
-        display.textSize = when (display.text.length)
-        {
+    fun tamañoTexto() {
+        val display = findViewById<TextView>(R.id.num)
+        display.textSize = when (display.text.length) {
             1 -> 120f
             2 -> 100f
             3 -> 70f
@@ -69,7 +65,5 @@ class FirstActivity : AppCompatActivity() {
             17 -> 12f
             else -> 11.5f
         }
-
-
     }
 }

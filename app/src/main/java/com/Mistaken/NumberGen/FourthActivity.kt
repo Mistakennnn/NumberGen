@@ -30,7 +30,7 @@ class FourthActivity : AppCompatActivity() {
 
         if (num1 != null && num2 != null && size != null)
         {
-            if (size > 0 && size <= 300)
+            if (size > 0)
             {
                 val menor = min(num1, num2)
                 val mayor = max(num1, num2)

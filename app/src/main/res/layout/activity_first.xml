@@ -4,81 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstActivity">
+    tools:context=".FirstActivity"
+    android:background="#2E4053">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number Generator"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/numInput1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter min number"
+        android:textColor="#FFFFFF"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <EditText
+        android:id="@+id/numInput2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter max number"
+        android:textColor="#FFFFFF"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/numInput1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:id="@+id/randomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="numRandom"
+        android:text="Generate"
+        android:backgroundTint="#6C63FF"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/numInput2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:gravity="center"
+        android:textSize="48sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/randomButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
     <View
         android:id="@+id/hola2"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:background="@color/purple_200"
-        app:layout_constraintBottom_toBottomOf="@+id/hola"
-        app:layout_constraintEnd_toEndOf="@+id/hola"
-        app:layout_constraintStart_toStartOf="@+id/hola"
-        app:layout_constraintTop_toTopOf="@+id/hola" />
+        android:background="#9AABBC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomButton" />
 
     <View
         android:id="@+id/hola"
         android:layout_width="125dp"
         android:layout_height="125dp"
-        android:background="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#3C4F65"
+        app:layout_constraintBottom_toBottomOf="@+id/hola2"
+        app:layout_constraintEnd_toEndOf="@+id/hola2"
+        app:layout_constraintStart_toStartOf="@+id/hola2"
+        app:layout_constraintTop_toTopOf="@+id/hola2" />
 
     <TextView
         android:id="@+id/aviso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#A9A9A9"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/hola2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomButton" />
 
     <TextView
         android:id="@+id/num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:gravity="center"
         android:maxLines="1"
+        android:text=""
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <EditText
-        android:id="@+id/selector1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/boton1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hola2"
-        android:maxLength="18"/>
-
-    <EditText
-        android:id="@+id/selector2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/boton1"
-        app:layout_constraintTop_toBottomOf="@+id/hola2"
-        android:maxLength="18"/>
-
-    <Button
-        android:id="@+id/boton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="numRandom"
-        android:text="press"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hola" />
-
+        app:layout_constraintBottom_toBottomOf="@+id/hola"
+        app:layout_constraintEnd_toEndOf="@+id/hola"
+        app:layout_constraintStart_toStartOf="@+id/hola"
+        app:layout_constraintTop_toTopOf="@+id/hola" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
