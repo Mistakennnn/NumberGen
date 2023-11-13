@@ -2,30 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name="com.Mistaken.NumberGen.NumberGenApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Firstappdaniel"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
         <activity
-            android:name="com.Mistaken.NumberGen.SixthActivity"
+            android:name="com.Mistaken.NumberGen.NumberGuesser"
             android:exported="false" />
         <activity
-            android:name="com.Mistaken.NumberGen.FifthActivity"
+            android:name="com.Mistaken.NumberGen.MultipleNamePicker"
             android:exported="false" />
         <activity
-            android:name="com.Mistaken.NumberGen.FourthActivity"
+            android:name="com.Mistaken.NumberGen.MultipleNumberGenerator"
             android:exported="false" />
         <activity
-            android:name="com.Mistaken.NumberGen.ThirdActivity"
+            android:name="com.Mistaken.NumberGen.NamePicker"
             android:exported="false" />
         <activity
-            android:name="com.Mistaken.NumberGen.SecondActivity"
+            android:name="com.Mistaken.NumberGen.YesOrNo"
             android:exported="false"
             android:label="@string/title_activity_second"
             android:theme="@style/Theme.Firstappdaniel" />
@@ -39,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FirstActivity"
+            android:name=".OneNumberGenerator"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

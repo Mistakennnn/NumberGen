@@ -8,10 +8,10 @@ import android.widget.TextView
 import com.daniel.firstappdaniel.R
 import kotlin.random.Random
 
-class FifthActivity : AppCompatActivity() {
+class MultipleNamePicker : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fifth)
+        setContentView(R.layout.activity_multiplenamepicker)
         supportActionBar?.apply { title = "Multiple Name Picker" }
     }
 

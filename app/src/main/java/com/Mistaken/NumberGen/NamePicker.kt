@@ -9,11 +9,13 @@ import com.daniel.firstappdaniel.R
 import com.daniel.firstappdaniel.R.id.mostrar
 import kotlin.random.Random
 
-class ThirdActivity : AppCompatActivity() {
+class NamePicker : AppCompatActivity() {
+    var count = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_third)
+        setContentView(R.layout.activity_namepicker)
         supportActionBar?.apply { title = "Name Picker" }
+        AdManager.initLoadAds(this)
     }
 
     fun pickName(View:View)
@@ -27,6 +29,11 @@ class ThirdActivity : AppCompatActivity() {
         if (nonEmptyLines.isNotEmpty()) {
             var num = Random.nextInt(0, nonEmptyLines.size)
             mostrar.text = nonEmptyLines[num]
+            count++
+            if (count == 5) {
+                AdManager.showInterstitialAd(this)
+                count = 0
+            }
         } else {
             mostrar.text = "No names available"
         }

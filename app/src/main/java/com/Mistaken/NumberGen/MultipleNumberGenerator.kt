@@ -10,10 +10,10 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.random.Random
 
-class FourthActivity : AppCompatActivity() {
+class MultipleNumberGenerator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fourth)
+        setContentView(R.layout.activity_multiplenumbergenerator)
         supportActionBar?.apply { title = "Multiple Number Generator" }
     }
 

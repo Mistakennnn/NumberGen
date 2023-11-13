@@ -9,16 +9,14 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.random.Random
 
-class FirstActivity : AppCompatActivity() {
+class OneNumberGenerator : AppCompatActivity() {
+    var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first)
+        setContentView(R.layout.activity_onenumbergenerator)
         supportActionBar?.apply { title = "Number Generator" }
-
-        val numInput1 = findViewById<EditText>(R.id.numInput1)
-        val numInput2 = findViewById<EditText>(R.id.numInput2)
-        val resultText = findViewById<TextView>(R.id.resultText)
+        AdManager.initLoadAds(this)
     }
 
     fun numRandom(view: View) {
@@ -38,6 +36,11 @@ class FirstActivity : AppCompatActivity() {
             texto.text = "$random"
             tamañoTexto()
             aviso.text = "Your number generated between $menor and $mayor is:"
+            count++
+            if (count == 5) {
+                AdManager.showInterstitialAd(this)
+                count = 0
+            }
         } else {
             aviso.text = "Cannot leave blank fields!"
         }
@@ -67,3 +70,4 @@ class FirstActivity : AppCompatActivity() {
         }
     }
 }
+

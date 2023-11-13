@@ -8,24 +8,31 @@ import android.widget.TextView
 import com.daniel.firstappdaniel.R
 import kotlin.random.Random
 
-class SecondActivity : AppCompatActivity() {
+class YesOrNo : AppCompatActivity() {
+    var count = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_yesorno)
         supportActionBar?.apply { title = "Yes or No?" }
+        AdManager.initLoadAds(this)
     }
 
     fun siONo(View: View) {
         val siONo = findViewById<TextView>(R.id.siONo)
         val imagen = findViewById<ImageView>(R.id.checkOrX)
-        val random = Random.nextInt(0, 2)
+        val random = Random.nextBoolean();
 
-        if (random == 0) {
+        if (random) {
             siONo.text = "No!"
             imagen.setImageResource(R.drawable.x)
         } else {
             siONo.text = "Yes!"
             imagen.setImageResource(R.drawable.checkmark)
+        }
+        count++
+        if (count == 5) {
+            AdManager.showInterstitialAd(this)
+            count = 0
         }
     }
 }
